@@ -44,10 +44,10 @@ server <- function(input, output) {
     return(desc())
   })
   
-  reactives$selectedXRange<-""
-  reactives$selectedYRange<-""
+  reactives$selectedXRange<-"" #initialize values
+  reactives$selectedYRange<-"" 
   
-  observeEvent(input$plot_brush, {
+  observeEvent(input$plot_brush, { 
   
     selected<-brushedPoints(iris_db, input$plot_brush)
     reactives$selectedXRange<-selected$Sepal.Length
